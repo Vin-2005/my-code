@@ -1,0 +1,87 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CarRentalSystem {
+    private static ArrayList<Car> cars = new ArrayList<>();
+    private static ArrayList<Customer> customers = new ArrayList<>();
+    private static ArrayList<Rental> rentals = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void mainMenu() {
+        System.out.println("\n=== Car Rental System Main Menu ===");
+        System.out.println("1. Add Car");
+        System.out.println("2. Add Customer");
+        System.out.println("3. Rent Car");
+        System.out.println("4. Return Car");
+        System.out.println("5. View All Cars");
+        System.out.println("6. View All Customers");
+        System.out.println("7. View All Rentals");
+        System.out.println("8. Exit");
+        System.out.print("Enter your choice: ");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        switch (choice) {
+            case 1:
+                addCar();
+                break;
+            case 2:
+                addCustomer();
+                break;
+            case 3:
+                rentCar();
+                break;
+            case 4:
+                returnCar();
+                break;
+            case 5:
+                viewAllCars();
+                break;
+            case 6:
+                viewAllCustomers();
+                break;
+            case 7:
+                viewAllRentals();
+                break;
+            case 8:
+                System.exit(0);
+            default:
+                System.out.println("Invalid choice. Please try again.");
+        }
+
+        mainMenu(); // Show menu again
+    }
+
+    // Implement all the methods for car, customer, and rental management
+    // (addCar, addCustomer, rentCar, returnCar, etc.)
+}
+
+class Car {
+    private String carId;
+    private String brand;
+    private String model;
+    private double rentalPrice;
+    private boolean isAvailable;
+
+    // Constructor, getters, setters
+}
+
+class Customer {
+    private String customerId;
+    private String name;
+    private String email;
+    private String phone;
+
+    // Constructor, getters, setters
+}
+
+class Rental {
+    private String rentalId;
+    private Car car;
+    private Customer customer;
+    private String rentalDate;
+    private String returnDate;
+
+    // Constructor, getters, setters
+}
